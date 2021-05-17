@@ -1,0 +1,62 @@
+﻿<Window x:Class="WebBkmkMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebBkmkMaker"
+        mc:Ignorable="d"
+        Title="WebBkmkMaker" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="15">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="要素名" Width="70"/>
+                <TextBox x:Name="ElementTextbox" Width="200" AcceptsReturn="True"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="属性名" Width="70"/>
+                <TextBox x:Name="AttributeTextbox" Width="200" AcceptsReturn="True"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="条件文字列" Width="70" VerticalAlignment="Center"/>
+                <TextBox x:Name="QueryTextbox" Width="200" AcceptsReturn="True"/>
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Center">
+                    <Label Content="条件設定"/>
+                    <RadioButton x:Name="ConditionANDRadioButton" Content="AND" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="ConditionORRadioButton" Content="OR" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="ConditionNOTRadioButton" Content="NOT" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Center">
+                    <Label Content="正規表現"/>
+                    <RadioButton x:Name="RegexONRadioButton" Content="使用する" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="RegexOFFRadioButton" Content="使用しない" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Button x:Name="ElementInspectBkmkButton" Content="要素を強調"/>
+            </StackPanel>
+
+            <Label Content="Bookmarkletコード"/>
+            <TextBox x:Name="BookmarkletSourceTextbox" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="CurrentSourceSendToClipboardButton" Content="クリップボードに転送"/>
+                <Label Content="登録名"/>
+                <TextBox x:Name="SourceRegistNameTextbox" Width="200"/>
+                <Button x:Name="SourceRegistButton" Content="リストに保存"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <ComboBox x:Name="SourceCollectionComboBox" Width="300"></ComboBox>
+                <Button x:Name="SelectedSourceSendClipboardButton" Content="クリップボードに転送"/>
+                <Button x:Name="SelectedSourceDeleteButton" Content="項目削除"/>
+            </StackPanel>
+
+            
+        </StackPanel>
+    </Grid>
+</Window>
